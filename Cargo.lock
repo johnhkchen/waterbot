@@ -100,18 +100,6 @@ checksum = "0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0"
 
 [[package]]
 name = "axum"
-version = "0.1.0"
-dependencies = [
- "axum 0.7.5",
- "env_logger",
- "log",
- "mime",
- "ructe",
- "tokio",
-]
-
-[[package]]
-name = "axum"
 version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3a6c9af12842a67734c9a2e355436e5d03b22383ed60cf13cd0c18fbfe3dcbcf"
@@ -891,6 +879,18 @@ name = "wasi"
 version = "0.11.0+wasi-snapshot-preview1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423"
+
+[[package]]
+name = "waterbot"
+version = "0.1.1"
+dependencies = [
+ "axum",
+ "env_logger",
+ "log",
+ "mime",
+ "ructe",
+ "tokio",
+]
 
 [[package]]
 name = "windows-sys"
