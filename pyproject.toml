@@ -1,0 +1,20 @@
+[project]
+name = "app"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "dagger-io",
+    "python-fasthtml>=0.12.16",
+]
+
+[build-system]
+requires = ["hatchling==1.25.0"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+dagger-io = { path = "sdk", editable = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]

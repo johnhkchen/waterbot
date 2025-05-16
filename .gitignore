@@ -1,0 +1,19 @@
+/.venv
+/**/__pycache__
+# /sdk
+.venv/
+venv/
+
+.pytest_cache/
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+.sesskey
+log.txt
+*.log
+
+.DS_Store
+.idea/
+.vscode/
