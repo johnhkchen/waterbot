@@ -10,6 +10,9 @@ sync:
 start:
     uv run src/app/main.py
 
+dev:
+    uv run src/app/main.py --reload
+
 up:
     dagger -c "build | as-service | up --ports=5001:5001"
 

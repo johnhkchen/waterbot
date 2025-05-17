@@ -82,9 +82,48 @@ from fasthtml.common import *
 
 app, rt = fast_app()
 
+@rt("/api/water/start/{zone}")
+def start_water(zone:str='0'):
+    return Button(f"Zone {zone} is Watering...",
+        hx_get=f"/api/water/stop/{zone}",
+        hx_swap="outerHTML"
+    )
+
+@rt("/api/water/stop/{zone}")
+def stop_water(zone:str='0'):
+    return Button(f"Zone {zone} Not Watering",
+        hx_get=f"/api/water/start/{zone}",
+        hx_swap="outerHTML"
+    )
+
+def watering_card(zone_num):
+    return Article(
+        H3(f"Watering Zone {zone_num}"),
+        Div(
+            Button("Press Me",
+                hx_get=f"/api/water/start/{zone_num}",
+                hx_swap="outerHTML"
+            )
+        )
+    )
+
+def home():
+    # The code below is a set of ft components
+    return Titled("Watering App",
+            P("Beep Boop"),
+            Div(
+                watering_card(1),
+                watering_card(2),
+                watering_card(3),
+                watering_card(4),
+                watering_card(5),
+                watering_card(6),
+            )
+    )
+
 @rt("/")
 def get():
-    return Titled("FastHTML", P("Let's do this!"))
+    return home()
 
 if __name__ == "__main__":
     # explicitly read HOST/PORT
